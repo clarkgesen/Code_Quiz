@@ -5,6 +5,8 @@ score4 = {initials: "", score: 0};
 score5 = {initials: "", score: 0};
 
 score = JSON.parse(window.localStorage.getItem('score'));
+rankScores(score);
+
 
 function rankScores(score){
 if(score.score >= score1.score){
@@ -43,4 +45,14 @@ if(score.score >= score1.score){
     score5.initials = score.initials;
     score5.score = score.score;
 }
+
+printScoreList();
+}
+
+function printScoreList(){
+    document.getElementById("first").textContent = (score1.initials + ": " + score1.score);
+    document.getElementById("second").textContent = (score1.initials + ": " + score1.score);
+    document.getElementById("third").textContent = (score1.initials + ": " + score1.score);
+    document.getElementById("fourth").textContent = (score1.initials + ": " + score1.score);
+    document.getElementById("fifth").textContent = (score1.initials + ": " + score1.score);
 }
